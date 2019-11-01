@@ -7,6 +7,7 @@ import {
 } from "react-router-dom"
 
 import { Header, Logo, Link, Links, Container, Blue } from "./style"
+import Home from "../Home"
 
 export default function App() {
   return (
@@ -33,7 +34,7 @@ export default function App() {
             <h1>This is matiive</h1>
           </Route>
           <Route path="/">
-            <h1>This is matiive</h1>
+            <Home />
           </Route>
         </Switch>
       </Container>
