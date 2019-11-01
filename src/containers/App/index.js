@@ -8,6 +8,7 @@ import {
 
 import { Header, Logo, Link, Links, Container, Blue } from "./style"
 import Home from "../Home"
+import Liability from "../Liability"
 
 export default function App() {
   return (
@@ -31,7 +32,7 @@ export default function App() {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/liability">
-            <h1>This is matiive</h1>
+            <Liability />
           </Route>
           <Route path="/">
             <Home />
