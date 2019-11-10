@@ -9,6 +9,7 @@ import {
 import { Header, Logo, Link, Links, Container, Blue } from "./style"
 import Home from "../Home"
 import Liability from "../Liability"
+import Final from "../Final"
 
 export default function App() {
   return (
@@ -34,6 +35,11 @@ export default function App() {
           <Route path="/liability">
             <Liability />
           </Route>
+
+          <Route path="/final">
+            <Final />
+          </Route>
+
           <Route path="/">
             <Home />
           </Route>
