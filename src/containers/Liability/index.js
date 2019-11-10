@@ -29,9 +29,9 @@ class Liability extends React.Component {
               Our private liability insurance at a glance. <br />
               Excellent protection. Suitable for you.
             </Title>
-            <LiabilityAccordion />
-            <LiabilityTestimonials />
-            <LiabilityOptions ref="liability-options" />
+            {this.props.nudgelevel === 2 ? <LiabilityAccordion /> : null}
+            {this.props.nudgelevel === 1 ? <LiabilityTestimonials /> : null}
+            <LiabilityOptions nudgelevel={this.props.nudgelevel} />
           </div>
         </Page>
       </div>

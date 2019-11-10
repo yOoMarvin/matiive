@@ -60,9 +60,10 @@ class Final extends React.Component {
             </Emojis>
             <ButtonContainer>
               <Button onClick={this.closeModal}>close</Button>
-              <Button onClick={() => console.log(this.props.location.search)}>
+              <Button onClick={() => console.log(window.location.href)}>
                 Log that stuff!
-              </Button>
+              </Button>{" "}
+              °
             </ButtonContainer>
           </ModalContainer>
         </Modal>
