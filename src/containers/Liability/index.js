@@ -2,9 +2,10 @@ import React from "react"
 
 import ProductInfo from "../../components/ProductInfo"
 import LiabilityOptions from "../../components/LiabilityOptions"
-// import LiabilityAccordion from "../components/LiabilityAccordion"
+import LiabilityAccordion from "../../components/LiabilityAccordion"
 import liability from "../../assets/liability.png"
 import { Title, Page } from "./style"
+import { LiabilityTestimonials } from "../../components/LiabilityTestimonials"
 
 class Liability extends React.Component {
   render() {
@@ -28,7 +29,8 @@ class Liability extends React.Component {
               Our private liability insurance at a glance. <br />
               Excellent protection. Suitable for you.
             </Title>
-            {/* <LiabilityAccordion /> */}
+            <LiabilityAccordion />
+            <LiabilityTestimonials />
             <LiabilityOptions ref="liability-options" />
           </div>
         </Page>
