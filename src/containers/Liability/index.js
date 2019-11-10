@@ -1,7 +1,7 @@
 import React from "react"
 
 import ProductInfo from "../../components/ProductInfo"
-// import LiabilityOptions from "../components/LiabilityOptions"
+import LiabilityOptions from "../../components/LiabilityOptions"
 // import LiabilityAccordion from "../components/LiabilityAccordion"
 import liability from "../../assets/liability.png"
 import { Title, Page } from "./style"
@@ -29,7 +29,7 @@ class Liability extends React.Component {
               Excellent protection. Suitable for you.
             </Title>
             {/* <LiabilityAccordion /> */}
-            {/* <LiabilityOptions ref="liability-options" /> */}
+            <LiabilityOptions ref="liability-options" />
           </div>
         </Page>
       </div>
