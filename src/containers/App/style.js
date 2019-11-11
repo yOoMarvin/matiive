@@ -22,7 +22,7 @@ export const Links = styled.div`
   flex-direction: row;
   justify-content: space-between;
 `
-export const Link = styled.span`
+export const StyledLink = styled.span`
   color: ${theme.text.tertiary};
   margin-left: 32px;
   margin-right: 32px;

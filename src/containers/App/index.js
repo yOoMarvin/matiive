@@ -4,9 +4,10 @@ import {
   Switch,
   Route,
   NavLink,
+  Link,
 } from "react-router-dom"
 
-import { Header, Logo, Link, Links, Container, Blue } from "./style"
+import { Header, Logo, StyledLink, Links, Container, Blue } from "./style"
 import Home from "../Home"
 import Liability from "../Liability"
 import Final from "../Final"
@@ -29,15 +30,15 @@ export default class App extends React.Component {
       <Router>
         <Container>
           <Header>
-            <Logo>
-              <Blue>matiive</Blue> insurance.
-            </Logo>
+            <Link to="/">
+              <Logo>
+                <Blue>matiive</Blue> insurance.
+              </Logo>
+            </Link>
+
             <Links>
               <NavLink exact to="/liability">
-                <Link>Private Liability</Link>
-              </NavLink>
-              <NavLink exact to="/">
-                <Link>Home</Link>
+                <StyledLink>Private Liability</StyledLink>
               </NavLink>
             </Links>
           </Header>
