@@ -62,8 +62,7 @@ class Final extends React.Component {
               <Button onClick={this.closeModal}>close</Button>
               <Button onClick={() => console.log(window.location.href)}>
                 Log that stuff!
-              </Button>{" "}
-              °
+              </Button>
             </ButtonContainer>
           </ModalContainer>
         </Modal>
