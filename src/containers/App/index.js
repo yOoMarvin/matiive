@@ -12,6 +12,8 @@ import Home from "../Home"
 import Liability from "../Liability"
 import Final from "../Final"
 
+import firebase from "../../config/firebase"
+
 export default class App extends React.Component {
   constructor() {
     super()
@@ -26,6 +28,7 @@ export default class App extends React.Component {
   }
 
   render() {
+    console.log(firebase.firebaseConfig)
     return (
       <Router>
         <Container>

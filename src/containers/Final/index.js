@@ -1,5 +1,6 @@
 import React from "react"
 import Modal from "react-modal"
+import firebase from "../../config/firebase"
 
 import {
   ModalContainer,
@@ -15,6 +16,8 @@ import {
 } from "./style"
 
 import final from "../../assets/final.png"
+
+let analytics = firebase.analytics()
 
 class Final extends React.Component {
   constructor() {
@@ -41,6 +44,9 @@ class Final extends React.Component {
 
   closeModal() {
     this.setState({ modalIsOpen: false })
+    // analytics test
+
+    analytics.logEvent("process finished")
   }
 
   render() {
@@ -54,9 +60,9 @@ class Final extends React.Component {
           <ModalContainer>
             <h2>How would you rate your experience so far?</h2>
             <Emojis>
-              <h1 onClick={() => console.log("I'm sad")}>🙁</h1>
-              <h1 onClick={() => console.log("I'm neutral")}>😐</h1>
-              <h1 onClick={() => console.log("I'm happy")}>🙂</h1>
+              <h1 onClick={() => analytics.logEvent("sad click")}>🙁</h1>
+              <h1 onClick={() => analytics.logEvent("neutral click")}>😐</h1>
+              <h1 onClick={() => analytics.logEvent("happy click")}>🙂</h1>
             </Emojis>
             <ButtonContainer>
               <Button onClick={this.closeModal}>close</Button>
