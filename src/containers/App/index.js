@@ -7,10 +7,19 @@ import {
   Link,
 } from "react-router-dom"
 
-import { Header, Logo, StyledLink, Links, Container, Blue } from "./style"
+import {
+  Header,
+  Logo,
+  StyledLink,
+  Links,
+  Container,
+  Blue,
+  Footer,
+} from "./style"
 import Home from "../Home"
 import Liability from "../Liability"
 import Final from "../Final"
+import Disclaimer from "../Disclaimer"
 
 import firebase from "../../config/firebase"
 
@@ -57,10 +66,19 @@ export default class App extends React.Component {
               <Final nudgelevel={this.state.nudgelevel} />
             </Route>
 
+            <Route path="/disclaimer">
+              <Disclaimer nudgelevel={this.state.nudgelevel} />
+            </Route>
+
             <Route path="/">
               <Home nudgelevel={this.state.nudgelevel} />
             </Route>
           </Switch>
+
+          <Footer>
+            <span>Copyright 2019 </span>
+            <Link to="/disclaimer">Disclaimer</Link>
+          </Footer>
         </Container>
       </Router>
     )

@@ -36,3 +36,9 @@ export const StyledLink = styled.span`
 export const Blue = styled.span`
   color: ${theme.brand.default};
 `
+export const Footer = styled.div`
+  width: 100%;
+  text-align: right;
+  margin-top: 120px;
+  color: ${theme.text.placeholder};
+`
