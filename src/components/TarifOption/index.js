@@ -12,7 +12,69 @@ import {
 } from "./style"
 import { Check } from "react-feather"
 
+import firebase from "../../config/firebase"
+
+// init analytics
+let analytics = firebase.analytics()
+
 class TarifOption extends React.Component {
+  constructor() {
+    super()
+
+    this.handleClick = this.handleClick.bind(this)
+  }
+  handleClick() {
+    switch (this.props.nudgelevel) {
+      case 0:
+        switch (this.props.option) {
+          case "basic":
+            analytics.logEvent("basic_0_click")
+            break
+          case "comfort":
+            analytics.logEvent("comfort_0_click")
+            break
+          case "top":
+            analytics.logEvent("top_0_click")
+            break
+          default:
+            break
+        }
+        break
+      case 1:
+        switch (this.props.option) {
+          case "basic":
+            analytics.logEvent("basic_1_click")
+            break
+          case "comfort":
+            analytics.logEvent("comfort_1_click")
+            break
+          case "top":
+            analytics.logEvent("top_1_click")
+            break
+          default:
+            break
+        }
+        break
+      case 2:
+        switch (this.props.option) {
+          case "basic":
+            analytics.logEvent("basic_2_click")
+            break
+          case "comfort":
+            analytics.logEvent("comfort_2_click")
+            break
+          case "top":
+            analytics.logEvent("top_2_click")
+            break
+          default:
+            break
+        }
+        break
+      default:
+        break
+    }
+  }
+
   render() {
     return (
       <Container>
@@ -110,7 +172,7 @@ class TarifOption extends React.Component {
           {this.props.price} <span style={{ fontSize: "10px" }}>per month</span>
         </Price>
         <Link to={"/final?" + this.props.linkparameter}>
-          <Button>Finish now</Button>
+          <Button onClick={this.handleClick}>Finish now</Button>
         </Link>
       </Container>
     )

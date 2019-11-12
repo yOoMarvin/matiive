@@ -6,6 +6,10 @@ import LiabilityAccordion from "../../components/LiabilityAccordion"
 import liability from "../../assets/liability.png"
 import { Title, Page } from "./style"
 import { LiabilityTestimonials } from "../../components/LiabilityTestimonials"
+import firebase from "../../config/firebase"
+
+// init analytics
+let analytics = firebase.analytics()
 
 class Liability extends React.Component {
   render() {
@@ -29,9 +33,21 @@ class Liability extends React.Component {
               Our private liability insurance at a glance. <br />
               Excellent protection. Suitable for you.
             </Title>
+            {/* nudge rendering based on nudgelevel (from parent state) */}
             {this.props.nudgelevel === 2 ? <LiabilityAccordion /> : null}
             {this.props.nudgelevel === 1 ? <LiabilityTestimonials /> : null}
             <LiabilityOptions nudgelevel={this.props.nudgelevel} />
+
+            {/* log analytic events basedon nudgelevel. Which nudge is presented to the user? */}
+            {this.props.nudgelevel === 0
+              ? analytics.logEvent("show_nudge_0")
+              : null}
+            {this.props.nudgelevel === 1
+              ? analytics.logEvent("show_nudge_1")
+              : null}
+            {this.props.nudgelevel === 2
+              ? analytics.logEvent("show_nudge_2")
+              : null}
           </div>
         </Page>
       </div>

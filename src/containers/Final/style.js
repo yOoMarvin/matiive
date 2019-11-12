@@ -74,5 +74,5 @@ export const Emojis = styled.div`
 export const ButtonContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
 `

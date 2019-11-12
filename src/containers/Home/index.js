@@ -14,6 +14,10 @@ import {
   Button,
 } from "./style"
 import titleimage from "../../assets/titleimage.png"
+import firebase from "../../config/firebase"
+
+// init analytics
+let analytics = firebase.analytics()
 
 class Index extends React.Component {
   render() {
@@ -84,7 +88,9 @@ class Index extends React.Component {
               </div>
             </div>
             <Link to="/liability">
-              <Button>Discover now!</Button>
+              <Button onClick={() => analytics.logEvent("discover_more_click")}>
+                Discover now!
+              </Button>
             </Link>
           </div>
           <Image src={titleimage} alt="Title" />

@@ -31,6 +31,9 @@ class Final extends React.Component {
     this.openModal = this.openModal.bind(this)
     this.afterOpenModal = this.afterOpenModal.bind(this)
     this.closeModal = this.closeModal.bind(this)
+    this.handleSadClick = this.handleSadClick.bind(this)
+    this.handleNeutralClick = this.handleNeutralClick.bind(this)
+    this.handleHappyClick = this.handleHappyClick.bind(this)
   }
 
   openModal() {
@@ -44,9 +47,180 @@ class Final extends React.Component {
 
   closeModal() {
     this.setState({ modalIsOpen: false })
-    // analytics test
+    analytics.logEvent("modal_cancel")
+  }
 
-    analytics.logEvent("process finished")
+  // helper for processing the url and params
+  processUrl(url) {
+    let params = url.split("?")[1].split("&")
+    let option = params[0].split("=")[1].split("-")[1]
+    let nudgelevel = params[1].split("=")[1]
+
+    let result = [option, nudgelevel]
+
+    return result
+  }
+  // function for handling emoji clicks
+  handleSadClick() {
+    let params = this.processUrl(window.location.href)
+    switch (params[0]) {
+      case "basic":
+        switch (params[1]) {
+          case "0":
+            analytics.logEvent("sad_basic_0_click")
+            break
+          case "1":
+            analytics.logEvent("sad_basic_1_click")
+            break
+          case "2":
+            analytics.logEvent("sad_basic_2_click")
+            break
+          default:
+            break
+        }
+        break
+      case "comfort":
+        switch (params[1]) {
+          case "0":
+            analytics.logEvent("sad_comfort_0_click")
+            break
+          case "1":
+            analytics.logEvent("sad_comfort_1_click")
+            break
+          case "2":
+            analytics.logEvent("sad_comfort_2_click")
+            break
+          default:
+            break
+        }
+        break
+      case "top":
+        switch (params[1]) {
+          case "0":
+            analytics.logEvent("sad_top_0_click")
+            break
+          case "1":
+            analytics.logEvent("sad_top_1_click")
+            break
+          case "2":
+            analytics.logEvent("sad_top_2_click")
+            break
+          default:
+            break
+        }
+        break
+      default:
+        break
+    }
+    this.setState({ modalIsOpen: false })
+  }
+
+  handleNeutralClick() {
+    let params = this.processUrl(window.location.href)
+    switch (params[0]) {
+      case "basic":
+        switch (params[1]) {
+          case "0":
+            analytics.logEvent("neutral_basic_0_click")
+            break
+          case "1":
+            analytics.logEvent("neutral_basic_1_click")
+            break
+          case "2":
+            analytics.logEvent("neutral_basic_2_click")
+            break
+          default:
+            break
+        }
+        break
+      case "comfort":
+        switch (params[1]) {
+          case "0":
+            analytics.logEvent("neutral_comfort_0_click")
+            break
+          case "1":
+            analytics.logEvent("neutral_comfort_1_click")
+            break
+          case "2":
+            analytics.logEvent("neutral_comfort_2_click")
+            break
+          default:
+            break
+        }
+        break
+      case "top":
+        switch (params[1]) {
+          case "0":
+            analytics.logEvent("neutral_top_0_click")
+            break
+          case "1":
+            analytics.logEvent("neutral_top_1_click")
+            break
+          case "2":
+            analytics.logEvent("neutral_top_2_click")
+            break
+          default:
+            break
+        }
+        break
+      default:
+        break
+    }
+    this.setState({ modalIsOpen: false })
+  }
+
+  handleHappyClick() {
+    let params = this.processUrl(window.location.href)
+    switch (params[0]) {
+      case "basic":
+        switch (params[1]) {
+          case "0":
+            analytics.logEvent("happy_basic_0_click")
+            break
+          case "1":
+            analytics.logEvent("happy_basic_1_click")
+            break
+          case "2":
+            analytics.logEvent("happy_basic_2_click")
+            break
+          default:
+            break
+        }
+        break
+      case "comfort":
+        switch (params[1]) {
+          case "0":
+            analytics.logEvent("happy_comfort_0_click")
+            break
+          case "1":
+            analytics.logEvent("happy_comfort_1_click")
+            break
+          case "2":
+            analytics.logEvent("happy_comfort_2_click")
+            break
+          default:
+            break
+        }
+        break
+      case "top":
+        switch (params[1]) {
+          case "0":
+            analytics.logEvent("happy_top_0_click")
+            break
+          case "1":
+            analytics.logEvent("happy_top_1_click")
+            break
+          case "2":
+            analytics.logEvent("happy_top_2_click")
+            break
+          default:
+            break
+        }
+        break
+      default:
+        break
+    }
+    this.setState({ modalIsOpen: false })
   }
 
   render() {
@@ -60,15 +234,12 @@ class Final extends React.Component {
           <ModalContainer>
             <h2>How would you rate your experience so far?</h2>
             <Emojis>
-              <h1 onClick={() => analytics.logEvent("sad click")}>🙁</h1>
-              <h1 onClick={() => analytics.logEvent("neutral click")}>😐</h1>
-              <h1 onClick={() => analytics.logEvent("happy click")}>🙂</h1>
+              <h1 onClick={this.handleSadClick}>🙁</h1>
+              <h1 onClick={this.handleNeutralClick}>😐</h1>
+              <h1 onClick={this.handleHappyClick}>🙂</h1>
             </Emojis>
             <ButtonContainer>
               <Button onClick={this.closeModal}>close</Button>
-              <Button onClick={() => console.log(window.location.href)}>
-                Log that stuff!
-              </Button>
             </ButtonContainer>
           </ModalContainer>
         </Modal>
@@ -94,7 +265,12 @@ class Final extends React.Component {
                 <label>E-mail:</label>
                 <Input type="text" placeholder="john@doe.com" />
               </FormGroup>
-              <Button type="submit">Submit now!</Button>
+              <Button
+                type="submit"
+                onClick={() => analytics.logEvent("submit_click")}
+              >
+                Submit now!
+              </Button>
             </form>
           </Left>
           <div>

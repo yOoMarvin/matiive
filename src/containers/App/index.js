@@ -22,6 +22,8 @@ import Final from "../Final"
 import Disclaimer from "../Disclaimer"
 
 import firebase from "../../config/firebase"
+// init analytics
+let analytics = firebase.analytics()
 
 export default class App extends React.Component {
   constructor() {
@@ -34,6 +36,20 @@ export default class App extends React.Component {
     this.state = {
       nudgelevel: Math.floor(Math.random() * 3 + 0),
     }
+
+    switch (this.state.nudgelevel) {
+      case 0:
+        analytics.logEvent("set_nudge_0")
+        break
+      case 1:
+        analytics.logEvent("set_nudge_1")
+        break
+      case 2:
+        analytics.logEvent("set_nudge_2")
+        break
+      default:
+        break
+    }
   }
 
   render() {
@@ -43,14 +59,18 @@ export default class App extends React.Component {
         <Container>
           <Header>
             <Link to="/">
-              <Logo>
+              <Logo onClick={() => analytics.logEvent("home_click")}>
                 <Blue>matiive</Blue> insurance.
               </Logo>
             </Link>
 
             <Links>
               <NavLink exact to="/liability">
-                <StyledLink>Private Liability</StyledLink>
+                <StyledLink
+                  onClick={() => analytics.logEvent("header_liability_click")}
+                >
+                  Private Liability
+                </StyledLink>
               </NavLink>
             </Links>
           </Header>
@@ -77,7 +97,12 @@ export default class App extends React.Component {
 
           <Footer>
             <span>Copyright 2019 </span>
-            <Link to="/disclaimer">Disclaimer</Link>
+            <Link
+              to="/disclaimer"
+              onClick={() => analytics.logEvent("disclaimer_click")}
+            >
+              Disclaimer
+            </Link>
           </Footer>
         </Container>
       </Router>

@@ -22,6 +22,8 @@ class LiabilityOptions extends React.Component {
           linkparameter={
             "option=liability-basic&nudge=" + this.props.nudgelevel
           }
+          nudgelevel={this.props.nudgelevel}
+          option="basic"
         />
         <TarifOption
           image={liabilityComfort}
@@ -36,6 +38,8 @@ class LiabilityOptions extends React.Component {
           linkparameter={
             "option=liability-comfort&nudge=" + this.props.nudgelevel
           }
+          nudgelevel={this.props.nudgelevel}
+          option="comfort"
         />
         <TarifOption
           image={liabilityTop}
@@ -49,6 +53,8 @@ class LiabilityOptions extends React.Component {
           row6="Damage to foreign things - 30.000€"
           price="6,20 €"
           linkparameter={"option=liability-top&nudge=" + this.props.nudgelevel}
+          nudgelevel={this.props.nudgelevel}
+          option="top"
         />
       </Container>
     )
