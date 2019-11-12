@@ -17,7 +17,9 @@ import {
 
 import final from "../../assets/final.png"
 
+// init analytics and firestore
 let analytics = firebase.analytics()
+let db = firebase.firestore()
 
 class Final extends React.Component {
   constructor() {
@@ -26,6 +28,8 @@ class Final extends React.Component {
     this.state = {
       modalIsOpen: true,
       clicks: 0,
+      mail: "",
+      name: "",
     }
 
     this.openModal = this.openModal.bind(this)
@@ -34,6 +38,9 @@ class Final extends React.Component {
     this.handleSadClick = this.handleSadClick.bind(this)
     this.handleNeutralClick = this.handleNeutralClick.bind(this)
     this.handleHappyClick = this.handleHappyClick.bind(this)
+    this.handleNameChange = this.handleNameChange.bind(this)
+    this.handleMailChange = this.handleMailChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   openModal() {
@@ -112,6 +119,23 @@ class Final extends React.Component {
       default:
         break
     }
+
+    // post to firestore
+    db.collection("activities")
+      .add({
+        feedback: "sad",
+        option: params[0],
+        nudgelevel: parseInt(params[1]),
+        created: new Date(),
+      })
+      .then(function() {
+        console.log("Document successfully written!")
+      })
+      .catch(function(error) {
+        console.error("Error writing document: ", error)
+      })
+
+    // close modal
     this.setState({ modalIsOpen: false })
   }
 
@@ -166,6 +190,22 @@ class Final extends React.Component {
       default:
         break
     }
+    // post to firestore
+    db.collection("activities")
+      .add({
+        feedback: "neutral",
+        option: params[0],
+        nudgelevel: parseInt(params[1]),
+        created: new Date(),
+      })
+      .then(function() {
+        console.log("Document successfully written!")
+      })
+      .catch(function(error) {
+        console.error("Error writing document: ", error)
+      })
+
+    // close modal
     this.setState({ modalIsOpen: false })
   }
 
@@ -220,7 +260,48 @@ class Final extends React.Component {
       default:
         break
     }
+    // post to firestore
+    db.collection("activities")
+      .add({
+        feedback: "happy",
+        option: params[0],
+        nudgelevel: parseInt(params[1]),
+        created: new Date(),
+      })
+      .then(function() {
+        console.log("Document successfully written!")
+      })
+      .catch(function(error) {
+        console.error("Error writing document: ", error)
+      })
+
+    // close modal
     this.setState({ modalIsOpen: false })
+  }
+
+  handleMailChange(e) {
+    this.setState({ mail: e.target.value })
+  }
+  handleNameChange(e) {
+    this.setState({ name: e.target.value })
+  }
+  handleSubmit() {
+    // fire analytics event
+    analytics.logEvent("submit_click")
+
+    // post to firestore
+    db.collection("submits")
+      .add({
+        name: this.state.name,
+        mail: this.state.mail,
+        created: new Date(),
+      })
+      .then(function() {
+        console.log("Document successfully written!")
+      })
+      .catch(function(error) {
+        console.error("Error writing document: ", error)
+      })
   }
 
   render() {
@@ -259,16 +340,23 @@ class Final extends React.Component {
             <form style={{ marginTop: "3em" }} action="/">
               <FormGroup>
                 <label>Name:</label>
-                <Input type="text" placeholder="John Doe" />
+                <Input
+                  type="text"
+                  placeholder="John Doe"
+                  value={this.state.name}
+                  onChange={this.handleNameChange}
+                />
               </FormGroup>
               <FormGroup>
                 <label>E-mail:</label>
-                <Input type="text" placeholder="john@doe.com" />
+                <Input
+                  type="text"
+                  placeholder="john@doe.com"
+                  value={this.state.mail}
+                  onChange={this.handleMailChange}
+                />
               </FormGroup>
-              <Button
-                type="submit"
-                onClick={() => analytics.logEvent("submit_click")}
-              >
+              <Button type="submit" onClick={this.handleSubmit}>
                 Submit now!
               </Button>
             </form>
