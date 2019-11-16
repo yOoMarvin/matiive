@@ -16,12 +16,12 @@ export const LiabilityTestimonials = () => {
         avatarName="Paul, 32"
       />
       <Testimonial
-        description="Manchmal ist es einfach so nervig, mit Leuten zu diskutieren und sich um alles zu kümmern. Dank der tollen Partnerservices der matiive Top Versicherung lief alles reibungslos und ich habe viel Zeit und Frust gespart"
+        description="Sometimes it's just so annoying to talk to people and take care of everything. Thanks to the great partner services of matiive Top Versicherung everything went smoothly and I saved a lot of time and frustration"
         avatar={lena}
         avatarName="Lena, 27"
       />
       <Testimonial
-        description="I lost my keys while shopping. This is a shock when you arrive at home! With the support of matiive, I was able to quickly fix everything and have my lock replaced."
+        description="I lost my keys while shopping. This is a shock when you arrive at home! With the support of matiive, I was able to quickly fix everything and got my lock replaced."
         avatar={luise}
         avatarName="Luise, 29"
       />
