@@ -13,6 +13,7 @@ import {
   Right,
   Fat,
   Image,
+  Info,
 } from "./style"
 
 class ProductInfo extends React.Component {
@@ -24,8 +25,19 @@ class ProductInfo extends React.Component {
         <Content>
           <Left>
             <h1>Our promise.</h1>
-            <Fat>{this.props.price}</Fat>
-            <Fat>{this.props.about}</Fat>
+            <p>{this.props.price}</p>
+            <br />
+            <Info>
+              <h1>Why is a private liability insurance useful?</h1>
+              <p>
+                The private liability insurance of <i>matiive</i> takes over for
+                you compensation claims against third parties and defends
+                against unjustified claims without further costs for you - if
+                necessary, even in court. In addition, it offers you numerous
+                important insurance benefits, such as:
+              </p>
+            </Info>
+
             <DetailContainer>
               <Row>
                 <CheckCircle />
@@ -42,6 +54,14 @@ class ProductInfo extends React.Component {
               <Row>
                 <CheckCircle />
                 <Text>{this.props.info4}</Text>
+              </Row>
+              <Row>
+                <CheckCircle />
+                <Text>{this.props.info5}</Text>
+              </Row>
+              <Row>
+                <CheckCircle />
+                <Text>{this.props.info6}</Text>
               </Row>
             </DetailContainer>
             <Button>Check out the options!</Button>
