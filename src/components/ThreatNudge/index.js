@@ -1,11 +1,8 @@
 import React from "react"
-import Collapsible from "react-collapsible"
 
 import { Container, TextContainer, Row, Image } from "./style"
 
 import paul from "../../assets/paul.png"
-import lena from "../../assets/lena.png"
-import luise from "../../assets/luise.png"
 
 // Styling in index.css
 function ThreatNudge() {
