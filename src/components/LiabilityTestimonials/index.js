@@ -16,7 +16,7 @@ export const LiabilityTestimonials = () => {
         avatarName="Paul, 32"
       />
       <Testimonial
-        description="Sometimes it's just so annoying to talk to people and take care of everything. Thanks to the great partner services of matiive Top Versicherung everything went smoothly and I saved a lot of time and frustration"
+        description="Sometimes it's just so annoying to talk to people and take care of everything. Thanks to the great partner services of matiive's top insurance everything went smoothly and I saved a lot of time and frustration"
         avatar={lena}
         avatarName="Lena, 27"
       />
