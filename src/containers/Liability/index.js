@@ -20,7 +20,7 @@ class Liability extends React.Component {
           <ProductInfo
             title="Covered. For all cases."
             subtitle="Always on the safe side with the private liability insurance from matiive."
-            price="Starting at $3.50 per month."
+            price="Starting at $5.50 per month."
             about="Protects you when you accidentally harm a thing or person."
             info1="Up to $50 million coverage"
             info2="Key loss included"
