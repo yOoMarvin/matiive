@@ -31,10 +31,9 @@ export default class App extends React.Component {
 
     // set a global nudge index
     // 0 = no nudge
-    // 1 = testimonial nudge
-    // 2 = accordian nudge
+    // 1 = threat nudge
     this.state = {
-      nudgelevel: Math.floor(Math.random() * 3 + 0),
+      nudgelevel: Math.floor(Math.random() * 2 + 0),
     }
 
     switch (this.state.nudgelevel) {
@@ -44,9 +43,10 @@ export default class App extends React.Component {
       case 1:
         analytics.logEvent("set_nudge_1")
         break
-      case 2:
-        analytics.logEvent("set_nudge_2")
-        break
+      //update: only two cases... 0 and 1
+      // case 2:
+      //   analytics.logEvent("set_nudge_2")
+      //   break
       default:
         break
     }

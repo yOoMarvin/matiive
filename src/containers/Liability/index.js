@@ -37,12 +37,9 @@ class Liability extends React.Component {
               Excellent protection. Suitable for you.
             </Title>
             {/* nudge rendering based on nudgelevel (from parent state) */}
-            {/* {this.props.nudgelevel === 2 ? <LiabilityAccordion /> : null} */}
-            {/* {this.props.nudgelevel === 1 ? <LiabilityTestimonials /> : null} */}
-            <ThreatNudge />
+            {this.props.nudgelevel === 1 ? <ThreatNudge /> : null}
             <LiabilityOptions nudgelevel={this.props.nudgelevel} />
-
-            {/* log analytic events basedon nudgelevel. Which nudge is presented to the user? */}
+            {/* log analytic events based on nudgelevel. Which nudge is presented to the user? */}
             {this.props.nudgelevel === 0
               ? analytics.logEvent("show_nudge_0")
               : null}
