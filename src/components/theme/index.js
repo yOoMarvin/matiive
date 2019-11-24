@@ -19,6 +19,7 @@ export const theme = {
   brand: {
     default: "#0C81F6",
     alt: "#3C414B",
+    darkblue: "#3c414b",
   },
   social: {
     facebook: "#3B5998",
