@@ -337,7 +337,10 @@ class Final extends React.Component {
               Just let us know your email address and we'll send you everything
               new about matiive. No Spam Ever! Pinky Promise!
             </p>
-            <form style={{ marginTop: "3em" }} action="/">
+            <form
+              style={{ marginTop: "3em" }}
+              action="https://forms.gle/SFcc7wi8HL3cXkSFA"
+            >
               <FormGroup>
                 <label>Name:</label>
                 <Input
