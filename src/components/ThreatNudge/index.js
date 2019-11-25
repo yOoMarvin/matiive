@@ -26,7 +26,7 @@ function ThreatNudge() {
         </Row>
 
         <h2>
-          "I have never thought how many things such a damange could include..."
+          "I had never thought how many things such a damange could include..."
         </h2>
         <Row>
           <Image
@@ -37,7 +37,7 @@ function ThreatNudge() {
             <p>
               I bumped into a pedestrian while cycling. He sufferd severe
               injuries from the collision and also demanded compensation for the
-              damages. I have never thought how many things such a damage could
+              damages. I had never thought how many things such a damage could
               include: compensation for pain, pension payments, loss of wages,
               costs for a nanny.
             </p>
