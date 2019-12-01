@@ -333,15 +333,15 @@ class Final extends React.Component {
               like to thank you for your trust and let you know as soon as
               something new happens.
             </p>
-            <p>
+            {/* <p>
               Just let us know your email address and we'll send you everything
               new about matiive. No Spam Ever! Pinky Promise!
-            </p>
+            </p> */}
             <form
               style={{ marginTop: "3em" }}
               action="https://forms.gle/SFcc7wi8HL3cXkSFA"
             >
-              <FormGroup>
+              {/* <FormGroup>
                 <label>Name:</label>
                 <Input
                   type="text"
@@ -358,9 +358,9 @@ class Final extends React.Component {
                   value={this.state.mail}
                   onChange={this.handleMailChange}
                 />
-              </FormGroup>
+              </FormGroup> */}
               <Button type="submit" onClick={this.handleSubmit}>
-                Submit now!
+                Continue to survey!
               </Button>
             </form>
           </Left>
