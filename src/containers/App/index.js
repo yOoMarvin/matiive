@@ -40,6 +40,7 @@ db.collection("activities")
         id: doc.id,
         nudge: doc.data().nudgelevel,
         feedback: doc.data().feedback,
+        option: doc.data().option,
         created: doc
           .data()
           .created.toDate()
