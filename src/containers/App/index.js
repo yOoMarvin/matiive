@@ -47,6 +47,7 @@ db.collection("activities")
       })
     })
   })
+// in the browser: right click and copy object. Add it to the file in root folder here
 console.log(data)
 
 export default class App extends React.Component {
