@@ -25,6 +25,30 @@ import firebase from "../../config/firebase"
 // init analytics
 let analytics = firebase.analytics()
 
+// ** TMP **
+// export firestore data
+// init analytics and firestore
+let db = firebase.firestore()
+// array for results
+let data = []
+// retrieve data and add it to array as object
+db.collection("activities")
+  .get()
+  .then(snapshot => {
+    snapshot.docs.forEach(doc => {
+      data.push({
+        id: doc.id,
+        nudge: doc.data().nudgelevel,
+        feedback: doc.data().feedback,
+        created: doc
+          .data()
+          .created.toDate()
+          .toJSON(),
+      })
+    })
+  })
+console.log(data)
+
 export default class App extends React.Component {
   constructor() {
     super()
