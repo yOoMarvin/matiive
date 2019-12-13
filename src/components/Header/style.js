@@ -11,10 +11,10 @@ export const Container = styled.div`
   left: 0;
   right: 0;
   z-index: 3;
+  background-color: ${theme.bg.wash};
 
   @media (max-width: 968px) {
     padding: 8px 16px;
-    background-color: ${theme.bg.wash};
   }
 `
 export const Logo = styled.h1`

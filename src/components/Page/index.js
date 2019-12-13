@@ -29,7 +29,7 @@ export default function Page(props) {
     <ThemeProvider theme={theme}>
       <Container>
         <Header />
-        <InnerContainer>{props.children}</InnerContainer>
+        <InnerContainer width={props.width}>{props.children}</InnerContainer>
         <Footer />
       </Container>
     </ThemeProvider>

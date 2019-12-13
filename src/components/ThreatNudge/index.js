@@ -46,6 +46,12 @@ function ThreatNudge() {
               I'm so glad that I had a private liabilty insurance like{" "}
               <i>matiive</i> that saved my life by covering all the costs!
             </p>
+            <br />
+            <p>
+              <i>
+                This coverage is only included in the 'First Class' coverage.
+              </i>
+            </p>
           </TextContainer>
         </Row>
       </Container>

@@ -1,26 +1,36 @@
 import styled from "styled-components"
+import { theme } from "../theme"
+import { Shadows } from "../globals"
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-  border-radius: 3px;
-  border: 2px solid #c4c4c4;
+  border-radius: 8px;
   padding: 1em 1em 1.5em 1em;
   width: 22em;
   margin-bottom: 3em;
 
+  background-color: ${theme.bg.default};
+
   @media (max-width: 440px) {
     width: 15em;
   }
+
+  &:hover {
+    ${Shadows.hover}
+  }
+
+  ${Shadows.default}
 `
 export const Title = styled.h3`
-  line-height: 0;
   padding-bottom: 0;
   margin-bottom: 0;
+  font-weight: 700;
 `
 export const Description = styled.div`
-  margin-left: 1em;
+  margin-left: 4px;
+  text-align: left;
 `
 export const TopRow = styled.div``
 export const LightRow = styled.div`

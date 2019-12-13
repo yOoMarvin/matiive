@@ -19,7 +19,8 @@ export default class App extends React.Component {
     // 0 = no nudge
     // 1 = threat nudge
     this.state = {
-      nudge: Math.floor(Math.random() * 2 + 0),
+      // nudge: Math.floor(Math.random() * 2 + 0),
+      nudge: 1,
     }
 
     switch (this.state.nudge) {
@@ -42,7 +43,7 @@ export default class App extends React.Component {
               renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/liability">
-            <Liability nudge={this.state.nudge} />
+            <Liability nudgelevel={this.state.nudge} />
           </Route>
 
           <Route path="/data">
@@ -50,15 +51,15 @@ export default class App extends React.Component {
           </Route>
 
           <Route path="/final">
-            <Final nudge={this.state.nudge} />
+            <Final nudgelevel={this.state.nudge} />
           </Route>
 
           <Route path="/disclaimer">
-            <Disclaimer nudge={this.state.nudge} />
+            <Disclaimer nudgelevel={this.state.nudge} />
           </Route>
 
           <Route path="/">
-            <Home nudge={this.state.nudge} />
+            <Home nudgelevel={this.state.nudge} />
           </Route>
         </Switch>
       </Router>

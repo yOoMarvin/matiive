@@ -156,18 +156,6 @@ class TarifOption extends React.Component {
           </LightRow>
         )}
 
-        {this.props.row7 ? (
-          <LightRow>
-            <Check />
-            <Description>{this.props.row7}</Description>
-          </LightRow>
-        ) : (
-          <LightRow>
-            <Check color={"#FFF"} />
-            <Description> </Description>
-          </LightRow>
-        )}
-
         <Price>
           {this.props.price} <span style={{ fontSize: "10px" }}>per month</span>
         </Price>
