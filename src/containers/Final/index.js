@@ -7,15 +7,11 @@ import {
   Emojis,
   ButtonContainer,
   Button,
-  Title,
-  Content,
-  FormGroup,
-  Input,
-  Image,
-  Left,
+  EmojiContainer,
 } from "./style"
 
-import final from "../../assets/final.png"
+import Page, { LargeHeading, SectionHeading } from "../../components/Page"
+import FinalForm from "../../components/FinalForm"
 
 // init analytics and firestore
 let analytics = firebase.analytics()
@@ -38,9 +34,6 @@ class Final extends React.Component {
     this.handleSadClick = this.handleSadClick.bind(this)
     this.handleNeutralClick = this.handleNeutralClick.bind(this)
     this.handleHappyClick = this.handleHappyClick.bind(this)
-    this.handleNameChange = this.handleNameChange.bind(this)
-    this.handleMailChange = this.handleMailChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   openModal() {
@@ -311,63 +304,69 @@ class Final extends React.Component {
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
           contentLabel="Example Modal"
+          style={{
+            content: {
+              top: "50%",
+              left: "50%",
+              right: "auto",
+              bottom: "auto",
+              marginRight: "-50%",
+              transform: "translate(-50%, -50%)",
+            },
+          }}
         >
           <ModalContainer>
-            <h2>How would you rate your experience so far?</h2>
+            <LargeHeading>
+              How would you rate your experience so far?
+            </LargeHeading>
             <Emojis>
-              <h1 onClick={this.handleSadClick}>🙁</h1>
-              <h1 onClick={this.handleNeutralClick}>😐</h1>
-              <h1 onClick={this.handleHappyClick}>🙂</h1>
+              <EmojiContainer>
+                <h1 onClick={this.handleSadClick}>😭</h1>
+                <h3>1</h3>
+              </EmojiContainer>
+
+              <EmojiContainer>
+                <h1>🙁</h1>
+                <h3>2</h3>
+              </EmojiContainer>
+
+              <EmojiContainer>
+                <h1>😕</h1>
+                <h3>3</h3>
+              </EmojiContainer>
+
+              <EmojiContainer>
+                <h1>😐</h1>
+                <h3>4</h3>
+              </EmojiContainer>
+
+              <EmojiContainer>
+                <h1>🙂</h1>
+                <h3>5</h3>
+              </EmojiContainer>
+
+              <EmojiContainer>
+                <h1>😊</h1>
+                <h3>6</h3>
+              </EmojiContainer>
+
+              <EmojiContainer>
+                <h1>😍</h1>
+                <h3>7</h3>
+              </EmojiContainer>
             </Emojis>
             <ButtonContainer>
               <Button onClick={this.closeModal}>close</Button>
             </ButtonContainer>
           </ModalContainer>
         </Modal>
-        <Title>Thank you for your interest</Title>
-        <Content>
-          <Left>
-            <p>
-              Since we are not yet officially launched with our matiive
-              insurance, everything is still a little in its infancy. We would
-              like to thank you for your trust and let you know as soon as
-              something new happens.
-            </p>
-            {/* <p>
-              Just let us know your email address and we'll send you everything
-              new about matiive. No Spam Ever! Pinky Promise!
-            </p> */}
-            <form
-              style={{ marginTop: "3em" }}
-              action="https://forms.gle/SFcc7wi8HL3cXkSFA"
-            >
-              {/* <FormGroup>
-                <label>Name:</label>
-                <Input
-                  type="text"
-                  placeholder="John Doe"
-                  value={this.state.name}
-                  onChange={this.handleNameChange}
-                />
-              </FormGroup>
-              <FormGroup>
-                <label>E-mail:</label>
-                <Input
-                  type="text"
-                  placeholder="john@doe.com"
-                  value={this.state.mail}
-                  onChange={this.handleMailChange}
-                />
-              </FormGroup> */}
-              <Button type="submit" onClick={this.handleSubmit}>
-                Continue to survey!
-              </Button>
-            </form>
-          </Left>
-          <div>
-            <Image src={final} alt="confetti" />
-          </div>
-        </Content>
+
+        <Page>
+          <SectionHeading>
+            <LargeHeading>Thank you for your interest</LargeHeading>
+          </SectionHeading>
+          <FinalForm />
+        </Page>
       </div>
     )
   }

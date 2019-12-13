@@ -5,6 +5,7 @@ export const Container = styled.div`
   width: 100%;
   text-align: right;
   margin-top: 120px;
+  margin-right: 16px;
   color: ${theme.text.tertiary};
 
   font-size: 14px;

@@ -10,7 +10,7 @@ export const Container = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  z-index: 3;
+  z-index: 0;
   background-color: ${theme.bg.wash};
 
   @media (max-width: 968px) {
