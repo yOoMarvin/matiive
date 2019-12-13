@@ -3,10 +3,7 @@ import React from "react"
 import Page, {
   SectionHeading,
   LargeHeading,
-  Subheading,
   Heading,
-  Paragraph,
-  LargeSubheading,
 } from "../../components/Page"
 import Form from "../../components/Form"
 
