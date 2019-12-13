@@ -8,33 +8,13 @@ export const Container = styled.div`
 export const Content = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: nowrap;
 `
 
-export const Title = styled.h1`
-  font-size: 3em;
-  text-align: center;
-`
-export const SubTitle = styled.h3`
-  text-align: center;
-  margin-bottom: 80px;
-`
-export const Fat = styled.p`
-  font-weight: bold;
-`
-export const Info = styled.div`
-  width: 500px;
-  @media (max-width: 850px) {
-    width: auto;
-  }
-`
-export const Left = styled.div``
-export const Right = styled.div``
 export const Image = styled.img`
-  @media (max-width: 1050px) {
-    display: none;
-  }
+  width: 50%;
+  height: auto;
 `
 export const DetailContainer = styled.div`
   display: flex;

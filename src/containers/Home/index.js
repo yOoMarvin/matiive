@@ -1,16 +1,16 @@
 import React from "react"
 import CookieConsent from "react-cookie-consent"
 
-import firebase from "../../config/firebase"
 import Page, {
   SectionHeading,
   LargeHeading,
   Subheading,
+  Heading,
+  Paragraph,
+  LargeSubheading,
 } from "../../components/Page"
 import Reasons from "../../components/Reasons"
-
-// init analytics
-let analytics = firebase.analytics()
+import ProductInfo from "../../components/ProductInfo"
 
 class Index extends React.Component {
   render() {
@@ -39,8 +39,30 @@ class Index extends React.Component {
           </Subheading>
         </SectionHeading>
 
+        <div style={{ height: "32px" }} />
+
+        <Reasons />
+
         <SectionHeading>
-          <Reasons />
+          <LargeHeading>Covered. For all cases</LargeHeading>
+          <Heading>Starting at $5.50 per month.</Heading>
+          <Subheading>
+            Always on the safe side with the private liability insurance from
+            matiive.
+          </Subheading>
+
+          <div style={{ height: "32px" }} />
+
+          <Heading>Why is a private liability insurance useful?</Heading>
+
+          <ProductInfo
+            info1="Up to $50 million coverage"
+            info2="Key loss included"
+            info3="Property damage to buildings"
+            info4="Additional damages to financial assets"
+            info5="Worldwide protection"
+            info6="Fast help with excellent support and customer service"
+          />
         </SectionHeading>
       </Page>
     )

@@ -25,6 +25,7 @@ export const DetailTitle = styled.p`
 `
 export const DetailText = styled.p`
   font-size: 12px;
+  color: ${theme.text.tertiary};
 `
 
 export const Image = styled.img`
