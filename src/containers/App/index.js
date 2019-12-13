@@ -7,7 +7,8 @@ import Final from "../Final"
 import Disclaimer from "../Disclaimer"
 import Data from "../Data"
 
-import { ConfigProvider } from "../../config/configContext"
+// context
+import { AppProvider } from "../../config/AppContext"
 
 import firebase from "../../config/firebase"
 // init analytics
@@ -16,7 +17,7 @@ let analytics = firebase.analytics()
 export default class App extends React.Component {
   render() {
     return (
-      <ConfigProvider>
+      <AppProvider>
         <Router>
           {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
@@ -42,7 +43,7 @@ export default class App extends React.Component {
             </Route>
           </Switch>
         </Router>
-      </ConfigProvider>
+      </AppProvider>
     )
   }
 }
