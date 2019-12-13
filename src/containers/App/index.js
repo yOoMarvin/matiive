@@ -5,7 +5,7 @@ import Home from "../Home"
 import Liability from "../Liability"
 import Final from "../Final"
 import Disclaimer from "../Disclaimer"
-import Page from "../../components/Page"
+import Data from "../Data"
 
 import firebase from "../../config/firebase"
 // init analytics
@@ -43,6 +43,10 @@ export default class App extends React.Component {
         <Switch>
           <Route path="/liability">
             <Liability nudge={this.state.nudge} />
+          </Route>
+
+          <Route path="/data">
+            <Data />
           </Route>
 
           <Route path="/final">

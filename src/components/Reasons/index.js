@@ -47,7 +47,7 @@ export default function Reasons() {
               <DetailText>Future proof calculation</DetailText>
             </DetailTextContainer>
           </DetailContainer>
-          <Link to="/liability">
+          <Link to="/data">
             <Button>Discover now!</Button>
           </Link>
         </div>
