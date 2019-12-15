@@ -1,5 +1,17 @@
 {
   "projects": {
     "default": "matiive"
+  },
+  "targets": {
+    "matiive": {
+      "hosting": {
+        "production": [
+          "matiive"
+        ],
+        "test": [
+          "test-matiive"
+        ]
+      }
+    }
   }
 }
