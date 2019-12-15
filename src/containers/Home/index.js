@@ -37,6 +37,7 @@ export default function Index() {
         <button onClick={() => setState(state => ({ ...state, nudge: 2 }))}>
           Change the nudge value!
         </button>
+        <button onClick={state.postData}>Post to firestore!</button>
       </SectionHeading>
 
       <SectionHeading>
