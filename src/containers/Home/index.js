@@ -34,6 +34,7 @@ export default function Index() {
 
       <SectionHeading>
         <LargeHeading>{state.nudge}</LargeHeading>
+        <LargeHeading>{state.id}</LargeHeading>
         <button onClick={() => setState(state => ({ ...state, nudge: 2 }))}>
           Change the nudge value!
         </button>
