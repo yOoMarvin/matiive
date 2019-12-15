@@ -36,7 +36,7 @@ export default function LiabilityOptions() {
             onClick={() => {
               setState(state => ({
                 ...state,
-                choiceToFinal: true,
+                choiceToSubmit: true,
                 option: "basic",
               }))
             }}
@@ -64,7 +64,7 @@ export default function LiabilityOptions() {
             onClick={() => {
               setState(state => ({
                 ...state,
-                choiceToFinal: true,
+                choiceToSubmit: true,
                 option: "comfort",
               }))
             }}
@@ -93,7 +93,7 @@ export default function LiabilityOptions() {
             onClick={() => {
               setState(state => ({
                 ...state,
-                choiceToFinal: true,
+                choiceToSubmit: true,
                 option: "top",
               }))
             }}

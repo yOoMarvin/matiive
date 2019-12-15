@@ -1,13 +1,26 @@
-import React from "react"
+import React, { useContext, useEffect } from "react"
 import useForm from "react-hook-form"
+import { AppContext } from "../../config/AppContext"
 
 import { Container, Input, FormGroup, Button, Image } from "./style"
 import final from "../../assets/final.png"
 
 export default function FinalForm() {
+  const [state, setState] = useContext(AppContext)
+  useEffect(() => {
+    state.postDataWithState(state)
+  })
+
   const { register, handleSubmit, errors } = useForm()
   const onSubmit = data => {
-    console.log(data)
+    //console.log(data)
+
+    setState(state => ({
+      ...state,
+      conversion: true,
+    }))
+
+    window.location.href = "https://forms.gle/gJjcDaWx6Y5R3xHE8"
   }
   console.log(errors)
 
@@ -24,7 +37,11 @@ export default function FinalForm() {
           Just let us know your email address and we'll send you everything new
           about matiive. No Spam Ever! Pinky Promise!
         </p>
-        <form style={{ width: "100%" }} onSubmit={handleSubmit(onSubmit)}>
+        <form
+          style={{ width: "100%" }}
+          onSubmit={handleSubmit(onSubmit)}
+          action="https://forms.gle/gJjcDaWx6Y5R3xHE8"
+        >
           <FormGroup>
             <div style={{ height: "32px" }} />
             <label>Name:</label>
@@ -32,7 +49,7 @@ export default function FinalForm() {
               type="text"
               placeholder="John Doe"
               value=""
-              ref={register({ required: true })}
+              ref={register({ required: false })}
             />
           </FormGroup>
           <FormGroup>
@@ -42,10 +59,13 @@ export default function FinalForm() {
               type="text"
               placeholder="john@doe.com"
               value=""
-              ref={register({ required: true })}
+              ref={register({ required: false })}
             />
           </FormGroup>
           <Button type="submit">Submit!</Button>
+          <p>
+            <i>Continue to our post survey and help us</i>
+          </p>
         </form>
       </div>
       <Image src={final} alt="confetti" />

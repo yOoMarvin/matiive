@@ -13,7 +13,7 @@ const AppProvider = props => {
       .doc(state.id)
       .set({
         birthdate: data.birthdate,
-        gener: data.gender,
+        gender: data.gender,
         family: data.family,
         housing: data.housing,
         feedback: data.feedback,
