@@ -4,7 +4,7 @@ import { theme } from "../theme"
 export const Container = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: stretch;
   flex-wrap: wrap;
   padding: 1em;
