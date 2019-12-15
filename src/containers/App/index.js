@@ -10,10 +10,6 @@ import Data from "../Data"
 // context
 import { AppProvider } from "../../config/AppContext"
 
-import firebase from "../../config/firebase"
-// init analytics
-let analytics = firebase.analytics()
-
 export default class App extends React.Component {
   render() {
     return (

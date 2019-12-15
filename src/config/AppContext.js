@@ -7,23 +7,23 @@ let db = firebase.firestore()
 const AppContext = React.createContext([{}, () => {}])
 
 const AppProvider = props => {
-  // post to firestore
-  const postData = () => {
+  // post to firestore with current data
+  const postDataWithState = data => {
     db.collection("sandbox")
       .doc(state.id)
       .set({
-        birthdate: state.birthdate,
-        gener: state.gender,
-        family: state.family,
-        housing: state.housing,
-        feedback: state.feedback,
-        LandingToInput: state.LandingToInput,
-        InputToChoice: state.InputToChoice,
-        ChoiceToSubmit: state.ChoiceToSubmit,
-        option: state.option,
-        conversion: state.conversion,
-        nudge: state.nudge,
-        created: state.created,
+        birthdate: data.birthdate,
+        gener: data.gender,
+        family: data.family,
+        housing: data.housing,
+        feedback: data.feedback,
+        landingToInput: data.landingToInput,
+        inputToChoice: data.inputToChoice,
+        choiceToSubmit: data.choiceToSubmit,
+        option: data.option,
+        conversion: data.conversion,
+        nudge: data.nudge,
+        created: data.created,
       })
       .then(function() {
         console.log("Document successfully written!")
@@ -43,15 +43,15 @@ const AppProvider = props => {
 
   // context hook
   const [state, setState] = useState({
-    postData: postData,
+    postDataWithState: postDataWithState,
     birthdate: null,
     gender: null,
     family: null,
     housing: null,
     feedback: null,
-    LandingToInput: false,
-    InputToChoice: false,
-    ChoiceToSubmit: false,
+    landingToInput: false,
+    inputToChoice: false,
+    choiceToSubmit: false,
     option: null,
     conversion: false,
     id: userID,

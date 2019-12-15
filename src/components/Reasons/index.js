@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useContext, useEffect } from "react"
 import {
   Content,
   DetailContainer,
@@ -11,8 +11,16 @@ import {
 import titleimage from "../../assets/titleimage.png"
 import { Link } from "react-router-dom"
 import { Check, Briefcase, Clock, DollarSign } from "react-feather"
+// context
+import { AppContext } from "../../config/AppContext"
 
 export default function Reasons() {
+  useEffect(() => {
+    state.postDataWithState(state)
+  })
+
+  const [state, setState] = useContext(AppContext)
+
   return (
     <div>
       <Content>
@@ -48,7 +56,13 @@ export default function Reasons() {
             </DetailTextContainer>
           </DetailContainer>
           <Link to="/data">
-            <Button>Discover now!</Button>
+            <Button
+              onClick={() => {
+                setState(state => ({ ...state, landingToInput: true }))
+              }}
+            >
+              Discover now!
+            </Button>
           </Link>
         </div>
 

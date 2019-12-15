@@ -1,14 +1,32 @@
-import React from "react"
+import React, { useContext, useEffect } from "react"
 import useForm from "react-hook-form"
 import { useHistory } from "react-router-dom"
 import { Heading, SectionHeading } from "../Page"
 import { FormGroup, Label, Input, Row, Button } from "./style"
 
+import { AppContext } from "../../config/AppContext"
+
 export default function Form() {
+  const [state, setState] = useContext(AppContext)
+
+  // The useEffect Hook runs everytime the dom is updated... in this case we post to firestore with our current state data
+  useEffect(() => {
+    state.postDataWithState(state)
+  })
+
   const { register, handleSubmit, errors } = useForm()
   let history = useHistory()
   const onSubmit = data => {
-    console.log(data)
+    //console.log(data)
+
+    setState(state => ({
+      ...state,
+      gender: data.gender,
+      housing: data.housing,
+      family: data.family,
+      inputToChoice: true,
+    }))
+
     history.push("/liability")
   }
   console.log(errors)

@@ -32,14 +32,14 @@ export default function Index() {
         <a href="/disclaimer">Find out more.</a>
       </CookieConsent>
 
-      <SectionHeading>
+      {/* <SectionHeading>
         <LargeHeading>{state.nudge}</LargeHeading>
         <LargeHeading>{state.id}</LargeHeading>
         <button onClick={() => setState(state => ({ ...state, nudge: 2 }))}>
           Change the nudge value!
         </button>
         <button onClick={state.postData}>Post to firestore!</button>
-      </SectionHeading>
+      </SectionHeading> */}
 
       <SectionHeading>
         <LargeHeading>Insurance as you imagine it</LargeHeading>

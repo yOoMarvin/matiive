@@ -9,7 +9,6 @@ export const Container = styled.div`
   border-radius: 8px;
   padding: 1em 1em 1.5em 1em;
   width: 22em;
-  margin-bottom: 3em;
 
   background-color: ${theme.bg.default};
 

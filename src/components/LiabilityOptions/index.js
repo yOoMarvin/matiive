@@ -1,15 +1,25 @@
-import React from "react"
-import { Container } from "./style"
+import React, { useContext, useEffect } from "react"
+import { Container, Button } from "./style"
+import { Link } from "react-router-dom"
+
 import TarifOption from "../TarifOption"
 
 import liabilityBasic from "../../assets/liability-basic.png"
 import liabilityComfort from "../../assets/liability-comfort.png"
 import liabilityTop from "../../assets/liability-top.png"
 
-class LiabilityOptions extends React.Component {
-  render() {
-    return (
-      <Container>
+import { AppContext } from "../../config/AppContext"
+
+export default function LiabilityOptions() {
+  const [state, setState] = useContext(AppContext)
+
+  useEffect(() => {
+    state.postDataWithState(state)
+  })
+
+  return (
+    <Container>
+      <div style={{ textAlign: "center" }}>
         <TarifOption
           image={liabilityBasic}
           title="Economy Class"
@@ -19,12 +29,24 @@ class LiabilityOptions extends React.Component {
           row3="Construction work - $50,000"
           row4="Damages abroad - $50,000"
           price="$5.50"
-          linkparameter={
-            "option=liability-basic&nudge=" + this.props.nudgelevel
-          }
-          nudgelevel={this.props.nudgelevel}
           option="basic"
         />
+        <Link to="/final">
+          <Button
+            onClick={() => {
+              setState(state => ({
+                ...state,
+                choiceToFinal: true,
+                option: "basic",
+              }))
+            }}
+          >
+            Finish now
+          </Button>
+        </Link>
+      </div>
+
+      <div style={{ textAlign: "center" }}>
         <TarifOption
           image={liabilityComfort}
           title="Business Class"
@@ -35,12 +57,24 @@ class LiabilityOptions extends React.Component {
           row4="Damages abroad - $100,000"
           row5="co-insured children - $15,000"
           price="$7.70"
-          linkparameter={
-            "option=liability-comfort&nudge=" + this.props.nudgelevel
-          }
-          nudgelevel={this.props.nudgelevel}
           option="comfort"
         />
+        <Link to="/final">
+          <Button
+            onClick={() => {
+              setState(state => ({
+                ...state,
+                choiceToFinal: true,
+                option: "comfort",
+              }))
+            }}
+          >
+            Finish now
+          </Button>
+        </Link>
+      </div>
+
+      <div style={{ textAlign: "center" }}>
         <TarifOption
           image={liabilityTop}
           title="First Class"
@@ -52,13 +86,22 @@ class LiabilityOptions extends React.Component {
           row5="co-insured children - $50,000"
           row6="Foreign things - $30,000"
           price="$8.90"
-          linkparameter={"option=liability-top&nudge=" + this.props.nudgelevel}
-          nudgelevel={this.props.nudgelevel}
           option="top"
         />
-      </Container>
-    )
-  }
+        <Link to="/final">
+          <Button
+            onClick={() => {
+              setState(state => ({
+                ...state,
+                choiceToFinal: true,
+                option: "top",
+              }))
+            }}
+          >
+            Finish now
+          </Button>
+        </Link>
+      </div>
+    </Container>
+  )
 }
-
-export default LiabilityOptions
