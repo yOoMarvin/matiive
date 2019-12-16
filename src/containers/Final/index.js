@@ -93,7 +93,14 @@ export default function Final(props) {
             </EmojiContainer>
           </Emojis>
           <ButtonContainer>
-            <Button onClick={closeModal}>close</Button>
+            <Button
+              onClick={() => {
+                setState(state => ({ ...state, feedback: 0 }))
+                closeModal()
+              }}
+            >
+              Close
+            </Button>
           </ButtonContainer>
         </ModalContainer>
       </Modal>
