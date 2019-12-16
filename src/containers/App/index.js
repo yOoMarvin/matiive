@@ -32,15 +32,22 @@ let db = firebase.firestore()
 // array for results
 let data = []
 // retrieve data and add it to array as object
-db.collection("activities")
+db.collection("sandbox")
   .get()
   .then(snapshot => {
     snapshot.docs.forEach(doc => {
       data.push({
         id: doc.id,
-        nudge: doc.data().nudgelevel,
+        nudge: doc.data().nudge,
         feedback: doc.data().feedback,
         option: doc.data().option,
+        family: doc.data().family,
+        gender: doc.data().gender,
+        housing: doc.data().housing,
+        landingToInput: doc.data().landingToInput,
+        inputToChoice: doc.data().inputToChoice,
+        choiceToSubmit: doc.data().choiceToSubmit,
+        conversion: doc.data().conversion,
         created: doc
           .data()
           .created.toDate()
