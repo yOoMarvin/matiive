@@ -29,10 +29,10 @@ function ThreatNudge() {
           "I had never thought how many things such a damange could include..."
         </h2>
         <Row>
-          <Image
+          {/* <Image
             src="https://images.unsplash.com/photo-1456964513482-f21a68af77ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1955&q=80"
             alt="bicycle crashing"
-          />
+          /> */}
           <TextContainer>
             <p>
               I bumped into a pedestrian while cycling. He sufferd severe
