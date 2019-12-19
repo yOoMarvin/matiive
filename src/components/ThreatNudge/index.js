@@ -41,7 +41,7 @@ function ThreatNudge() {
               include: compensation for pain, pension payments, loss of wages,
               costs for a nanny.
             </p>
-            <p>The loss amount was around $30,000.</p>
+            <p>The loss amount was around 30.000 €.</p>
             <p>
               I'm so glad that I had a private liabilty insurance like{" "}
               <i>matiive</i> that saved my life by covering all the costs!

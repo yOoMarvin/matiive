@@ -56,7 +56,7 @@ export default function Index() {
 
       <SectionHeading>
         <LargeHeading>Covered. For all cases</LargeHeading>
-        <Heading>Starting at $5.50 per month.</Heading>
+        <Heading>Starting at 5,50€ per month.</Heading>
         <Subheading>
           Always on the safe side with the private liability insurance from
           matiive.
@@ -67,7 +67,7 @@ export default function Index() {
         <Heading>Why is a private liability insurance useful?</Heading>
 
         <ProductInfo
-          info1="Up to $50 million coverage"
+          info1="Up to 50 Mio. € coverage"
           info2="Key loss included"
           info3="Property damage to buildings"
           info4="Additional damages to financial assets"

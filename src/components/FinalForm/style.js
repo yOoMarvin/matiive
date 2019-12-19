@@ -43,4 +43,5 @@ export const Container = styled.div`
 export const Image = styled.img`
   width: 50%;
   height: auto;
+  padding: 8px;
 `

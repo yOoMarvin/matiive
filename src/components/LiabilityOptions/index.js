@@ -24,11 +24,11 @@ export default function LiabilityOptions() {
           image={liabilityBasic}
           title="Economy Class"
           subtitle="matiive basic"
-          row1="Insurance Sum $5 Mio."
-          row2="Loss of private keys - $20,000"
-          row3="Construction work - $50,000"
-          row4="Damages abroad - $50,000"
-          price="$5.50"
+          row1="Insurance Sum 5 Mio €."
+          row2="Loss of private keys - 20.000 €"
+          row3="Construction work - 50.000 €"
+          row4="Damages abroad - 50.000 €"
+          price="5,50 €"
           option="basic"
         />
         <Link to="/final">
@@ -51,12 +51,12 @@ export default function LiabilityOptions() {
           image={liabilityComfort}
           title="Business Class"
           subtitle="matiive comfort"
-          row1="Insurance Sum $15 Mio."
-          row2="Loss of private keys - $30,000"
-          row3="Construction work - $100,000"
-          row4="Damages abroad - $100,000"
-          row5="co-insured children - $15,000"
-          price="$7.70"
+          row1="Insurance Sum 15 Mio. €"
+          row2="Loss of private keys - 30.000 €"
+          row3="Construction work - 100.000 €"
+          row4="Damages abroad - 100.000 €"
+          row5="co-insured children - 15.000 €"
+          price="7,70 €"
           option="comfort"
         />
         <Link to="/final">
@@ -79,13 +79,13 @@ export default function LiabilityOptions() {
           image={liabilityTop}
           title="First Class"
           subtitle="matiive top"
-          row1="Insurance Sum $50 Mio."
-          row2="Loss of private keys - $50,000"
-          row3="Construction work - $150,000"
-          row4="Damages abroad - $150,000"
-          row5="co-insured children - $50,000"
-          row6="Foreign things - $30,000"
-          price="$8.90"
+          row1="Insurance Sum 50 Mio. €"
+          row2="Loss of private keys - 50.000 €"
+          row3="Construction work - 150.000 €"
+          row4="Damages abroad - 150.000 €"
+          row5="co-insured children - 50.000 €"
+          row6="Foreign things - 30.000 €"
+          price="8,90 €"
           option="top"
         />
         <Link to="/final">
