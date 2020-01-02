@@ -2,20 +2,25 @@ import styled from "styled-components"
 import { theme } from "../../components/theme"
 
 export const Container = styled.div`
-  padding: 8px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-`
-export const Header = styled.div`
-  display: flex;
-  width: 100%;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  padding: 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  background-color: ${theme.bg.wash};
+
+  @media (max-width: 968px) {
+    padding: 8px 16px;
+  }
 `
 export const Logo = styled.h1`
   font-size: 24px;
+  font-weight: 700;
+  color: ${theme.text.default};
 `
 export const Links = styled.div`
   display: flex;
@@ -35,10 +40,4 @@ export const StyledLink = styled.span`
 `
 export const Blue = styled.span`
   color: ${theme.brand.default};
-`
-export const Footer = styled.div`
-  width: 100%;
-  text-align: right;
-  margin-top: 120px;
-  color: ${theme.text.placeholder};
 `

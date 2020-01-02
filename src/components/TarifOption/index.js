@@ -12,171 +12,93 @@ import {
 } from "./style"
 import { Check } from "react-feather"
 
-import firebase from "../../config/firebase"
+export default function TarifOption(props) {
+  return (
+    <Container>
+      <TopRow>
+        <img src={props.image} alt="option" />
+        <Title>{props.title}</Title>
+        <p>{props.subtitle}</p>
+      </TopRow>
 
-// init analytics
-let analytics = firebase.analytics()
+      {props.row1 ? (
+        <LightRow>
+          <Check />
+          <Description>{props.row1}</Description>
+        </LightRow>
+      ) : (
+        <LightRow>
+          <Check />
+          <Description> </Description>
+        </LightRow>
+      )}
 
-class TarifOption extends React.Component {
-  constructor() {
-    super()
+      {props.row2 ? (
+        <LightRow>
+          <Check />
+          <Description>{props.row2}</Description>
+        </LightRow>
+      ) : (
+        <LightRow>
+          <Check color={"#FFF"} />
+          <Description> </Description>
+        </LightRow>
+      )}
 
-    this.handleClick = this.handleClick.bind(this)
-  }
-  handleClick() {
-    switch (this.props.nudgelevel) {
-      case 0:
-        switch (this.props.option) {
-          case "basic":
-            analytics.logEvent("basic_0_click")
-            break
-          case "comfort":
-            analytics.logEvent("comfort_0_click")
-            break
-          case "top":
-            analytics.logEvent("top_0_click")
-            break
-          default:
-            break
-        }
-        break
-      case 1:
-        switch (this.props.option) {
-          case "basic":
-            analytics.logEvent("basic_1_click")
-            break
-          case "comfort":
-            analytics.logEvent("comfort_1_click")
-            break
-          case "top":
-            analytics.logEvent("top_1_click")
-            break
-          default:
-            break
-        }
-        break
-      case 2:
-        switch (this.props.option) {
-          case "basic":
-            analytics.logEvent("basic_2_click")
-            break
-          case "comfort":
-            analytics.logEvent("comfort_2_click")
-            break
-          case "top":
-            analytics.logEvent("top_2_click")
-            break
-          default:
-            break
-        }
-        break
-      default:
-        break
-    }
-  }
+      {props.row3 ? (
+        <LightRow>
+          <Check />
+          <Description>{props.row3}</Description>
+        </LightRow>
+      ) : (
+        <LightRow>
+          <Check color={"#FFF"} />
+          <Description> </Description>
+        </LightRow>
+      )}
 
-  render() {
-    return (
-      <Container>
-        <TopRow>
-          <img src={this.props.image} alt="option" />
-          <Title>{this.props.title}</Title>
-          <p>{this.props.subtitle}</p>
-        </TopRow>
+      {props.row4 ? (
+        <LightRow>
+          <Check />
+          <Description>{props.row4}</Description>
+        </LightRow>
+      ) : (
+        <LightRow>
+          <Check color={"#FFF"} />
+          <Description> </Description>
+        </LightRow>
+      )}
 
-        {this.props.row1 ? (
-          <LightRow>
-            <Check />
-            <Description>{this.props.row1}</Description>
-          </LightRow>
-        ) : (
-          <LightRow>
-            <Check />
-            <Description> </Description>
-          </LightRow>
-        )}
+      {props.row5 ? (
+        <LightRow>
+          <Check />
+          <Description>{props.row5}</Description>
+        </LightRow>
+      ) : (
+        <LightRow>
+          <Check color={"#FFF"} />
+          <Description> </Description>
+        </LightRow>
+      )}
 
-        {this.props.row2 ? (
-          <LightRow>
-            <Check />
-            <Description>{this.props.row2}</Description>
-          </LightRow>
-        ) : (
-          <LightRow>
-            <Check color={"#FFF"} />
-            <Description> </Description>
-          </LightRow>
-        )}
+      {props.row6 ? (
+        <LightRow>
+          <Check />
+          <Description>{props.row6}</Description>
+        </LightRow>
+      ) : (
+        <LightRow>
+          <Check color={"#FFF"} />
+          <Description> </Description>
+        </LightRow>
+      )}
 
-        {this.props.row3 ? (
-          <LightRow>
-            <Check />
-            <Description>{this.props.row3}</Description>
-          </LightRow>
-        ) : (
-          <LightRow>
-            <Check color={"#FFF"} />
-            <Description> </Description>
-          </LightRow>
-        )}
-
-        {this.props.row4 ? (
-          <LightRow>
-            <Check />
-            <Description>{this.props.row4}</Description>
-          </LightRow>
-        ) : (
-          <LightRow>
-            <Check color={"#FFF"} />
-            <Description> </Description>
-          </LightRow>
-        )}
-
-        {this.props.row5 ? (
-          <LightRow>
-            <Check />
-            <Description>{this.props.row5}</Description>
-          </LightRow>
-        ) : (
-          <LightRow>
-            <Check color={"#FFF"} />
-            <Description> </Description>
-          </LightRow>
-        )}
-
-        {this.props.row6 ? (
-          <LightRow>
-            <Check />
-            <Description>{this.props.row6}</Description>
-          </LightRow>
-        ) : (
-          <LightRow>
-            <Check color={"#FFF"} />
-            <Description> </Description>
-          </LightRow>
-        )}
-
-        {this.props.row7 ? (
-          <LightRow>
-            <Check />
-            <Description>{this.props.row7}</Description>
-          </LightRow>
-        ) : (
-          <LightRow>
-            <Check color={"#FFF"} />
-            <Description> </Description>
-          </LightRow>
-        )}
-
-        <Price>
-          {this.props.price} <span style={{ fontSize: "10px" }}>per month</span>
-        </Price>
-        <Link to={"/final?" + this.props.linkparameter}>
-          <Button onClick={this.handleClick}>Finish now</Button>
-        </Link>
-      </Container>
-    )
-  }
+      <Price>
+        {props.price} <span style={{ fontSize: "10px" }}>per month</span>
+      </Price>
+      {/* <Link to={"/final"}>
+        <Button>Finish now</Button>
+      </Link> */}
+    </Container>
+  )
 }
-
-export default TarifOption

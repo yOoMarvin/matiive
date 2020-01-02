@@ -1,19 +1,24 @@
 import React from "react"
+import Page, {
+  SectionHeading,
+  LargeHeading,
+  Paragraph,
+} from "../../components/Page"
 
-class Disclaimer extends React.Component {
-  render() {
-    return (
-      <div style={{ padding: "15px" }}>
-        <h1>Disclaimer</h1>
-        <p>
-          maative ist ein fiktiver Versicherer welcher zu Experimentszwecken an
-          der Uni Mannheim entwickelt wurde. Die dargestellten Produkte sind
-          nicht real und es besteht keinerlei Anspruch auf Leistung. Mit der
-          Nutzung der Website willigen Sie der Datenschutzerklärung sowie der
-          Verwendung von Cookies ein. Diese werden auf der Webseite verwendet um
-          die User Experience zu steigern.
-        </p>
-        <h1>Impressum</h1>
+export default function Disclaimer() {
+  return (
+    <Page>
+      <SectionHeading>
+        <LargeHeading>Disclaimer</LargeHeading>
+        <Paragraph>
+          maative is a fictitious insurer which was developed for experimental
+          purposes at the University of Mannheim. The products shown are not
+          real and there is no entitlement for service.
+          {/* By using the website,
+          you consent to the data protection declaration and the use of cookies.
+          These are used on the website to increase the user experience. */}
+        </Paragraph>
+        {/* <h1>Impressum</h1>
         <p>
           <b>Verantwortlicher nach § 5 Telemediengesetz (TMG)</b>
         </p>
@@ -266,10 +271,8 @@ class Disclaimer extends React.Component {
           persönlichen Daten mit Wirkung für die Zukunft zu widerrufen. Zur
           Auskunftserteilung wenden Sie sich bitte an den Anbieter unter den
           Kontaktdaten im Impressum.
-        </p>
-      </div>
-    )
-  }
+        </p> */}
+      </SectionHeading>
+    </Page>
+  )
 }
-
-export default Disclaimer

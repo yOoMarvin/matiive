@@ -3,47 +3,34 @@ import { Shadows } from "../../components/globals"
 import { theme } from "../../components/theme"
 
 export const Content = styled.div`
-  padding: 16px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-around;
-`
-export const Title = styled.h1`
-  font-size: 32px;
-  text-align: center;
-`
-export const Subtitle = styled.p`
-  font-size: 18px;
-  text-align: center;
+  justify-content: space-between;
+  flex-shrink: 3;
 `
 export const DetailContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  margin-bottom: 16px;
-  margin-top: 32px;
-  margin-right: 24px;
+  margin-bottom: 32px;
 `
 export const DetailTextContainer = styled.div`
   margin-left: 8px;
 `
 export const DetailTitle = styled.p`
   font-size: 14px;
-  color: #3c414b;
-  font-weight: bold;
-  line-height: 0px;
+  font-weight: 500;
 `
 export const DetailText = styled.p`
   font-size: 12px;
-  line-height: 8px;
+  color: ${theme.text.tertiary};
 `
 
 export const Image = styled.img`
-  @media (max-width: 850px) {
-    display: none;
-  }
+  width: 50%;
+  height: auto;
 `
 
 export const Button = styled.button`
