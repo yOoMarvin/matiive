@@ -32,7 +32,7 @@ let db = firebase.firestore()
 // array for results
 let data = []
 // retrieve data and add it to array as object
-db.collection("sandbox")
+db.collection("production")
   .get()
   .then(snapshot => {
     snapshot.docs.forEach(doc => {
