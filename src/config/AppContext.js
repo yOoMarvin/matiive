@@ -10,7 +10,7 @@ const AppProvider = props => {
   // post to firestore with current data
   const postDataWithState = data => {
     //db.collection("production")
-    db.collection("production")
+    db.collection("sandbox")
       .doc(state.id)
       .set({
         birthdate: data.birthdate,
